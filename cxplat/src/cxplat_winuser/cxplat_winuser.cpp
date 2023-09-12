@@ -130,6 +130,8 @@ cxplat_initialize()
         auto fault_injection_stack_depth =
             _get_environment_variable_as_size_t(CXPLAT_FAULT_INJECTION_SIMULATION_ENVIRONMENT_VARIABLE_NAME);
         auto leak_detector = _get_environment_variable_as_bool(CXPLAT_MEMORY_LEAK_DETECTION_ENVIRONMENT_VARIABLE_NAME);
+        fault_injection_stack_depth = 12;
+        leak_detector = true;
 
         if (fault_injection_stack_depth || leak_detector) {
             cxplat_status_t status = _cxplat_symbol_decoder_initialize();
